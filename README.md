@@ -2,7 +2,7 @@ Cinder-Angelscript
 ===================
 
 
-***The current version of angelscript seems to have some issues when building on OSX/32Bits. All xcode samples are setup to use 64Bits architecture instead.***
+****The current version of angelscript seems to have some issues when building on OSX/32Bits. All xcode samples are setup to use 64Bits architecture instead.****
 
 
 **From Angelcode website:**
