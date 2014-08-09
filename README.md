@@ -16,10 +16,11 @@ void HelloWorld()
     string scriptString = "string who(){\
                                 return \"Angelscript\";\
                             }";
-                            
+    
+    // create and compile the script                  
     as::ScriptRef script = as::Script::create( scriptString, "" );
 
-    // Call the function and cast what the function returns to
+    // call the function and cast what the function returns to
     // a string. The full function signature needs to be specified
     console() << "Hello " << script->call<string>( "string who()" ) << endl;
   
