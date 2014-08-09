@@ -34,19 +34,19 @@ Efforts have been made to let it call standard C functions and C++ methods with 
 For the script writer the scripting language follows the widely known syntax of C/C++, but without the need to worry about pointers and memory leaks. Contrary to most scripting languages, AngelScript uses the common C/C++ datatypes for more efficient communication with the host application.
 
 
-**Samples:**
-***Basic:***
-[Hello World from file](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)
-[Hello World from string](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)
-[Hello World with print function](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)
-
-[Settings primitives](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)
-[Settings static types](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)
-
-[Get Variable Value](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)
-[Set Variable Value](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)
-
-***Registrating interface:***
+**Samples:**   
+***Basic:***   
+[Hello World from file](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)   
+[Hello World from string](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)   
+[Hello World with print function](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)   
+   
+[Settings primitives](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)   
+[Settings static types](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)   
+   
+[Get Variable Value](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)   
+[Set Variable Value](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)   
+   
+***Registrating interface:***   
 
 [Get Variable Address](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)
 [Set Variable Address](https://github.com/simongeilfus/Cinder-Angelscript/blob/master/samples/Get%20Variable%20Address/src/GetVariableAddressApp.cpp)
