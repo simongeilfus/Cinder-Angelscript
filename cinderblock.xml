@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cinder>
+<block
+	name=		"AngelScript"
+	id=			"sg.cinder.angelscript"
+	git=		"git://github.com/simongeilfus/Cinder-Angelscript.git"
+	author=		"Simon Geilfus"
+	summary=	"Wrapper around Angelscript. The AngelCode Scripting Library is an extremely flexible cross-platform scripting library designed to allow applications to extend their functionality through external scripts.
+	Library written by Andreas Jönsson. (http://www.angelcode.com/angelscript)"
+	license=	"zlib"
+	version=	"2.29.1"
+	url=		"http://github.com/simongeilfus/Cinder-Angelscript"
+	library=	"http://www.angelcode.com/angelscript/"
+	>
+
+	<includePath system="true">lib/angelscript/angelscript/include</includePath>
+	<includePath system="true">lib/angelscript/add_on</includePath>
+	<includePath>include</includePath>
+	<sourcePattern>src/*.cpp</sourcePattern>
+
+	<platform os="macosx">
+		<staticLibrary>lib/osx/libangelscript.a</staticLibrary>
+		<staticLibrary>lib/osx/libangelscriptaddons.a</staticLibrary>
+		<staticLibrary>lib/osx/libangelscriptcinder.a</staticLibrary>
+	</platform>
+	<platform os="msw">
+		<staticLibrary>lib/msw/angelscript.lib</staticLibrary>
+		<staticLibrary>lib/msw/angelscriptaddons.lib</staticLibrary>
+		<staticLibrary>lib/msw/angelscriptcinder.lib</staticLibrary>
+	</platform>
+</block>
+</cinder>
