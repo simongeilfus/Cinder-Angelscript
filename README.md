@@ -2,11 +2,10 @@ Cinder-Angelscript
 ===================
 Thin wrapper around angelscript for use with the latest cinder release. Use it to make an interface between a cinder application and angelcode scripts.
 
+**[http://www.angelcode.com/angelscript/](http://www.angelcode.com/angelscript/)**
+
 _The current version of angelscript seems to have some issues when building on OSX/32Bits._  
 _All xcode samples are setup to use 64Bits architecture instead._
-
-
-**[http://www.angelcode.com/angelscript/](http://www.angelcode.com/angelscript/)**
 
   
 ```c++
