@@ -119,6 +119,13 @@ namespace as {
         
         //! outputs detailed about registered types to the console
         static void listRegisteredTypes( bool listMethods = true, bool listProperties = true );
+        //! outputs details about registered methods to the console
+        static void listRegisteredMethods();
+        //! outputs details about registered properties to the console
+        static void listRegisteredProperties();
+        //! outputs details about registered enums to the console
+        static void listRegisteredEnums();
+
         
     protected:
         Script( const std::string &moduleName = "Default" );

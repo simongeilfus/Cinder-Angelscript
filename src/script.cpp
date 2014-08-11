@@ -561,6 +561,85 @@ namespace as {
         RegisterScriptMath( sEngine );
     }
     
+    //! outputs details about registered types to the console
+    void Script::listRegisteredTypes( bool listMethods, bool listProperties )
+    {
+        asIScriptEngine *engine = as::Script::getEngine();
+        asUINT typeCount = engine->GetObjectTypeCount();
+        for( int i = 0; i < typeCount; i++ ){
+            asIObjectType *type = engine->GetObjectTypeByIndex( i );
+            string name     = type->GetName();
+            string ns       = type->GetNamespace();
+            string nsname   = ( ns.length() ? ns + "::" + name : name );
+            std::cout << nsname << std::endl;
+            
+            // output properties
+            asUINT propertyCount = type->GetPropertyCount();
+            if( listProperties && propertyCount ){
+                std::cout << std::endl;
+                for( int j = 0; j < propertyCount; j++ ){
+                    string propertyDeclaration   = type->GetPropertyDeclaration( j );
+                    std::cout << '\t' << propertyDeclaration << std::endl;
+                }
+                std::cout << std::endl;
+            }
+            
+            // output methods
+            if( listMethods ){
+                asUINT methodCount = type->GetMethodCount();
+                for( int j = 0; j < methodCount; j++ ){
+                    asIScriptFunction *method   = type->GetMethodByIndex( j );
+                    string methodDeclaration    = method->GetDeclaration();
+                    std::cout << '\t' << methodDeclaration << std::endl;
+                }
+                std::cout << std::endl;
+            }
+        }
+    }
+    //! outputs details about registered methods to the console
+    void Script::listRegisteredMethods()
+    {
+        asIScriptEngine *engine = as::Script::getEngine();
+        asUINT globalFunctionCount = engine->GetGlobalFunctionCount();
+        for( int i = 0 ; i < globalFunctionCount; i++ ){
+            asIScriptFunction *function = engine->GetGlobalFunctionByIndex( i );
+            string name         = function->GetName();
+            string ns           = function->GetNamespace();
+            string declaration  = function->GetDeclaration();
+            std::cout << ( !ns.empty() ? "(" + ns + ") " + declaration : declaration ) << std::endl;
+        }
+        
+    }
+    //! outputs details about registered properties to the console
+    void Script::listRegisteredProperties()
+    {
+        asIScriptEngine *engine = as::Script::getEngine();
+        asUINT globalPropertyCount = engine->GetGlobalPropertyCount();
+        for( int i = 0 ; i < globalPropertyCount; i++ ){
+            const char *name;
+            const char *ns;
+            int typeId;
+            bool isConst;
+            engine->GetGlobalPropertyByIndex( i, &name, &ns, &typeId, &isConst );
+            const char* typeDeclaration = engine->GetTypeDeclaration( typeId );
+            string property = ( isConst ? "const " : "" ) + string( typeDeclaration ) + " " + string( name );
+            std::cout << property << std::endl;
+        }
+    }
+    //! outputs details about registered enums to the console
+    void Script::listRegisteredEnums()
+    {
+        asIScriptEngine *engine = as::Script::getEngine();
+        asUINT enumCount = engine->GetEnumCount();
+        for( int i = 0; i < enumCount; i++ ){
+            int typeId;
+            string typeDeclaration = engine->GetTypeDeclaration( typeId );
+            string enumName = engine->GetEnumByIndex( i, &typeId );
+            string enumDeclaration = typeDeclaration + " " + enumName;
+            std::cout << enumDeclaration << std::endl;
+        }
+    }
+    
     //! setArg Template Specializations
     template<> void Script::setArgValue<int>( int arg, int value ) { getContext()->SetArgDWord( arg, value ); }
     template<> void Script::setArgValue<float>( int arg, float value ) { getContext()->SetArgFloat( arg, value ); }
