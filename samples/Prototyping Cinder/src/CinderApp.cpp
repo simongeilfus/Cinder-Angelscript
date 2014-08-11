@@ -21,7 +21,7 @@ public:
     void mouseMove( MouseEvent event );
     void mouseUp( MouseEvent event );
     
-    //! setup the engine, registers the app interface and load scripts
+    //! setup the engine, registers the app interface
 	void setupScriptEngine();
     
     //! console wrapper
