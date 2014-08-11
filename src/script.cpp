@@ -16,6 +16,7 @@
 #include <scriptdictionary/scriptdictionary.h>
 
 #include "cinder/Utilities.h"
+#include "cinder/app/App.h"
 
 using namespace std;
 using namespace ci;
@@ -401,7 +402,7 @@ namespace as {
                 
                 DataSourceRef includeData;
                 try {
-                    includeData = app::loadAsset( includes[n] );
+                    includeData = app::App::get()->loadAsset( includes[n] );
                 }
                 catch( ci::app::AssetLoadExc exc ){
                     cout << exc.what() << endl;
